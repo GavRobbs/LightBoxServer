@@ -14,7 +14,8 @@ app.get("/", (req,res) => {
 });
 
 app.post("/update", (req, res) => {
-	console.log(req.body.type + "\n" + JSON.stringify(req.body.data));
+	console.log(req.body.data + "\n");
+	console.log(req.body.type + "\n");
 	return res.json({result: "valid"});
 });
 
