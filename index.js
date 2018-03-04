@@ -3,9 +3,8 @@ var app = express();
 var cors = require("cors");
 var bodyParser = require("body-parser");
 
-
-app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
+app.use(bodyParser.json());
 
 app.use(cors());
 
@@ -14,7 +13,7 @@ app.get("/", (req,res) => {
 });
 
 app.post("/update", (req, res) => {
-	console.log(req.body.data + "\n");
+	console.log(JSON.stringify(req.body.data) + "\n");
 	console.log(req.body.type + "\n");
 	return res.json({result: "valid"});
 });
