@@ -13,6 +13,7 @@ app.get("/", (req,res) => {
 });
 
 app.post("/update", (req, res) => {
+	console.log(JSON.stringify(req.body) + "\n");
 	console.log(JSON.stringify(req.body.data_out) + "\n");
 	console.log(req.body.type + "\n");
 	return res.json({result: "valid"});
