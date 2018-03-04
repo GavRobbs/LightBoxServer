@@ -1,13 +1,13 @@
 var express = require("express");
 var app = express();
-//var cors = require("cors");
+var cors = require("cors");
 var bodyParser = require("body-parser");
 
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
 
-//app.use(cors());
+app.use(cors());
 
 app.get("/", (req,res) => {
 	return res.send("You are here");
