@@ -8,7 +8,7 @@ app.use(bodyParser.json());
 
 app.use(cors());
 
-var colors= [false, false, false, false, false, false];
+var colors= [0, 0, 0, 0, 0, 0];
 var blink = false;
 var blink_delay = 0;
 var pattern_switch_delay = 0;
