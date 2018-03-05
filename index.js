@@ -35,12 +35,10 @@ app.post("/update", (req, res) => {
 		colors = req.body.data_out.color_array;
 		blink = req.body.data_out.blink;
 		blink_delay = req.body.data_out.blink_delay;
-		return res.json({type: 0, colors: colors, blink: blink, blink_delay : blink_delay});
 	} else{
 		display_type = "pattern";
 		pattern_code = req.body.data_out.pattern_code;
 		pattern_switch_delay = req.body.data_out.pattern_switch_delay;
-		return res.json({type: 1, pcode: pattern_code, delay: pattern_switch_delay});
 	}
 	return res.json({result: "valid"});
 });
