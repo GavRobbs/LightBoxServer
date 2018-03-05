@@ -14,7 +14,6 @@ var blink_delay = 0;
 var pattern_switch_delay = 0;
 var pattern_code = "";
 var display_type = "nopattern";
-var changed = false;
 
 function ClearEverything(){
 	colors= [0, 0, 0, 0, 0, 0];
@@ -31,7 +30,6 @@ app.get("/", (req,res) => {
 
 app.post("/update", (req, res) => {
 	ClearEverything();
-	changed = true;
 	if(req.body.type == "nopattern"){
 		display_type = "nopattern";
 		colors = req.body.data_out.color_array;
@@ -46,17 +44,12 @@ app.post("/update", (req, res) => {
 });
 
 app.get("/todo", (req, res) => {
-	changed = false;
 	if(display_type == "nopattern"){
 		return res.send("context:todo;type:0;" + "colors:"+colors.toString()+";blink:" + blink.toString() +";blink_delay:" + blink_delay.toString()+";");
 	} else{
 		return res.send("context:todo;type:1;pcode:"+pattern_code.toString()+";delay:" + pattern_switch_delay.toString()+";");
 	}
 });
-
-app.get("/haschanged", (req, res)=>{
-	return res.send("context:change;hasChanged:"+changed+";");
-})
 
 app.listen(process.env.PORT || 3000, (req, res) => {
 	console.log("My server is running");
