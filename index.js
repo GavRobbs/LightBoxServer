@@ -8,7 +8,7 @@ app.use(bodyParser.json());
 
 app.use(cors());
 
-var colors= [0, 0, 0, 0, 0, 0];
+var colors= [0, 0, 1, 0, 0, 0];
 var blink = 0;
 var blink_delay = 0;
 var pattern_switch_delay = 0;
@@ -17,7 +17,7 @@ var display_type = "nopattern";
 var changed = false;
 
 function ClearEverything(){
-	colors= [false, false, false, false, false, false];
+	colors= [0, 0, 0, 0, 0, 0];
 	blink = false;
 	blink_delay = 0;
 	pattern_switch_delay = 0;
