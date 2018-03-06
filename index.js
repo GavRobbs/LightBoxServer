@@ -47,7 +47,7 @@ app.get("/todo", (req, res) => {
 	if(display_type == "nopattern"){
 		return res.send("context:todo;type:0;" + "colors:"+colors.toString()+";blink:" + blink.toString() +";blink_delay:" + blink_delay.toString()+";");
 	} else{
-		return res.send("context:todo;type:1;pcode:"+pattern_code.toString()+";delay:" + pattern_switch_delay.toString()+";");
+		return res.send("context:todo;type:1;pcode:"+pattern_code.toString().substr(0,32)+";delay:" + pattern_switch_delay.toString()+";");
 	}
 });
 
